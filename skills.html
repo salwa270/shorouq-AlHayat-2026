@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Development - Shorouq Al-Hayat</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .skill-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #eee;
+        }
+
+        .skill-header {
+            background-color: var(--color-secondary);
+            padding: 20px;
+            color: var(--color-text-main);
+        }
+
+        .skill-content {
+            padding: 25px;
+        }
+
+        .step-list {
+            list-style: none;
+            counter-reset: step-counter;
+        }
+
+        .step-list li {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 15px;
+        }
+
+        .step-list li::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 35px;
+            height: 35px;
+            background-color: var(--color-primary);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header role="banner">
+        <a href="index.html" class="logo">☀️ Shorouq Al-Hayat</a>
+        <nav role="navigation">
+            <ul>
+ <li><a href="index.html" class="active" aria-current="page">home</a></li>
+                <li><a href="chat.html"> chat</a></li>
+                <li><a href="learning.html">learning</a></li>
+                <li><a href="skills.html">skills</a></li>
+                <li><a href="support.html">support</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content" role="main">
+        <div style="text-align: center; margin-bottom: 40px;">
+            <h1>Skill Development</h1>
+            <p>Simple guides to help you prepare for the future.</p>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsDdaMH4W1Y3YE4sRxKf-pUYrq6wI7PCe6hQ&s" alt="Growth and success illustration" class="page-header-image">
+        </div>
+
+        <section aria-label="Job Preparation Guides">
+
+            <article class="skill-card">
+                <div class="skill-header">
+                    <h2>📝 How to Write a CV (Resume)</h2>
+                </div>
+                <div class="skill-content">
+                    <p>A CV tells employers about you. Here is a simple way to make one:</p>
+                    <ol class="step-list">
+                        <li><strong>Write your name</strong> and contact info clearly at the top.</li>
+                        <li><strong>List your skills</strong> (like "good listener", "punctual", "hard worker").</li>
+                        <li><strong>Add your education</strong> (school names and dates).</li>
+                        <li><strong>Ask a friend</strong> to read it and check for mistakes.</li>
+                    </ol>
+                </div>
+            </article>
+
+            <article class="skill-card">
+                <div class="skill-header">
+                    <h2>🤝 Interview Tips</h2>
+                </div>
+                <div class="skill-content">
+                    <p>Meeting an employer can be nervous, but you can do it!</p>
+                    <ol class="step-list">
+                        <li><strong>Dress neatly.</strong> Wear clean clothes that make you feel good.</li>
+                        <li><strong>Arrive early.</strong> Aim to be 10 minutes early.</li>
+                        <li><strong>Smile and say hello.</strong> Being friendly is a great skill.</li>
+                        <li><strong>Listen carefully</strong> to the questions. It's okay to take time to answer.</li>
+                    </ol>
+                </div>
+            </article>
+
+        </section>
+
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; 2024 Shorouq Al-Hayat. Designed with care.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

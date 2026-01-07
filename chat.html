@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with Shorouq - Shorouq Al-Hayat</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Chat Specific Styles */
+        .chat-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            height: 70vh;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .chat-avatar {
+            font-size: 2rem;
+            background: rgba(255, 255, 255, 0.2);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background-color: #FAFAFA;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 15px 20px;
+            border-radius: 20px;
+            font-size: 1.1rem;
+            line-height: 1.5;
+            position: relative;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message.bot {
+            background-color: var(--color-accent);
+            color: var(--color-text-main);
+            align-self: flex-start;
+            border-bottom-left-radius: 5px;
+        }
+
+        .message.user {
+            background-color: var(--color-primary);
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 5px;
+        }
+
+        .chat-input-area {
+            padding: 20px;
+            background: white;
+            border-top: 1px solid #eee;
+            display: flex;
+            gap: 10px;
+        }
+
+        #user-input {
+            flex: 1;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-family: inherit;
+        }
+
+        #user-input:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px rgba(107, 144, 128, 0.2);
+        }
+
+        .send-btn {
+            background-color: var(--color-primary);
+            color: white;
+            border: none;
+            padding: 0 30px;
+            border-radius: 30px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .send-btn:hover {
+            background-color: var(--color-primary-hover);
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header role="banner">
+        <a href="index.html" class="logo">☀️ شروق الحياة</a>
+        <nav role="navigation">
+            <ul>
+  <li><a href="index.html" class="active" aria-current="page">home</a></li>
+                <li><a href="chat.html"> chat</a></li>
+                <li><a href="learning.html">learning</a></li>
+                <li><a href="skills.html">skills</a></li>
+                <li><a href="support.html">support</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content" role="main">
+        <section class="chat-container" aria-label="واجهة المحادثة">
+            <div class="chat-header">
+                <div class="chat-avatar" aria-hidden="true">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdZlrXBpq9s7nYOSSuwEbeFQsUhKPIs_NcQA&s"
+                        alt="" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                </div>
+                <div>
+                    <h1 style="font-size: 1.5rem; margin:0; color:white;">مساعد شروق</h1>
+                    <p style="font-size: 0.9rem; margin:0; opacity: 0.9;">هنا لأسمعك وأساعدك</p>
+                </div>
+            </div>
+
+            <div id="chat-messages" class="chat-messages" aria-live="polite">
+                <div class="message bot">
+                    أهلاً بك! أنا شروق. أنا هنا لدعمك. كيف تشعر اليوم؟
+                </div>
+            </div>
+
+            <form id="chat-form" class="chat-input-area">
+                <label for="user-input" class="sr-only">اكتب رسالتك</label>
+                <input type="text" id="user-input" placeholder="اكتب رسالتك هنا..." autocomplete="off" dir="auto">
+                <button type="submit" class="send-btn">إرسال</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

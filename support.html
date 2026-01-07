@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Shorouq Al-Hayat</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .breathe-container {
+            text-align: center;
+            padding: 40px;
+            background: white;
+            border-radius: var(--border-radius);
+            margin-bottom: 40px;
+        }
+
+        .circle {
+            width: 150px;
+            height: 150px;
+            background-color: var(--color-secondary);
+            border-radius: 50%;
+            margin: 30px auto;
+            transform: scale(1);
+            animation: breathe 8s infinite ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 0 20px rgba(164, 195, 178, 0.5);
+        }
+
+        @keyframes breathe {
+
+            0%,
+            100% {
+                transform: scale(1);
+                content: "Breathe Out";
+            }
+
+            50% {
+                transform: scale(1.5);
+                content: "Breathe In";
+            }
+        }
+
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            .circle {
+                animation: none;
+                transform: scale(1.2);
+            }
+        }
+
+        .resource-list {
+            list-style: none;
+            display: grid;
+            gap: 20px;
+        }
+
+        .resource-item {
+            background: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .resource-icon {
+            font-size: 2rem;
+            color: var(--color-primary);
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header role="banner">
+        <a href="index.html" class="logo">☀️ Shorouq Al-Hayat</a>
+        <nav role="navigation">
+            <ul>
+                <li><a href="index.html" class="active" aria-current="page">home</a></li>
+                <li><a href="chat.html"> chat</a></li>
+                <li><a href="learning.html">learning</a></li>
+                <li><a href="skills.html">skills</a></li>
+                <li><a href="support.html">support</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content" role="main">
+        <div style="text-align: center; margin-bottom: 40px;">
+            <h1>Psychological Support</h1>
+            <p>Take a moment for yourself. You are safe here.</p>
+            <img src="data:image/png;base64,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" alt="Calm and peaceful support illustration" class="page-header-image">
+        </div>
+
+        <section aria-labelledby="breathe-title">
+            <div class="breathe-container">
+                <h2 id="breathe-title">Calming Breathing Exercise</h2>
+                <p>Follow the circle. Breathe in as it grows, breathe out as it shrinks.</p>
+                <div class="circle" aria-hidden="true"></div>
+                <!-- Text alternative for screen readers -->
+                <p class="sr-only">Animation showing a circle expanding for 4 seconds (inhale) and contracting for 4
+                    seconds (exhale).</p>
+            </div>
+        </section>
+
+        <section aria-labelledby="resources-title">
+            <h2 id="resources-title" style="margin-bottom: 20px;">Helpful Resources</h2>
+            <ul class="resource-list">
+                <li class="resource-item">
+                    <div class="resource-icon" aria-hidden="true">📞</div>
+                    <div>
+                        <h3>Helpline (Mock)</h3>
+                        <p>Call 123-456-7890 for immediate talk support.</p>
+                    </div>
+                </li>
+                <li class="resource-item">
+                    <div class="resource-icon" aria-hidden="true">🧘</div>
+                    <div>
+                        <h3>Daily Meditation</h3>
+                        <p>Simple guided audio sessions coming soon.</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; 2024 Shorouq Al-Hayat. Designed with care.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Simple JS to update text inside the breathing circle for visual guidance
+        const circle = document.querySelector('.circle');
+        if (circle && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            setInterval(() => {
+                // Determine phase based on animation timing roughly or just let CSS handle visual
+                // Adding text dynamically helps visual focus
+                // Note: CSS content usually handles this better for performance, 
+                // but JS can be more accessible if updating DOM text.
+                // Keeping simple CSS animation for now.
+            }, 4000);
+        }
+    </script>
+</body>
+
+</html>
